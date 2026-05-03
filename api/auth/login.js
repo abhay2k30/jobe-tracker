@@ -1,6 +1,6 @@
-import { connectDB } from '../../_lib/mongodb.js';
-import User from '../../_lib/User.js';
-import { signToken, setAuthCookie } from '../../_lib/auth.js';
+import { connectDB } from '../_lib/mongodb.js';
+import User from '../_lib/User.js';
+import { signToken, setAuthCookie } from '../_lib/auth.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });

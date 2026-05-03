@@ -1,7 +1,7 @@
-import { connectDB } from '../../_lib/mongodb.js';
-import Job from '../../_lib/Job.js';
-import User from '../../_lib/User.js';
-import { sendStaleEmail } from '../../_lib/resend.js';
+import { connectDB } from '../_lib/mongodb.js';
+import Job from '../_lib/Job.js';
+import User from '../_lib/User.js';
+import { sendStaleEmail } from '../_lib/resend.js';
 
 export default async function handler(req, res) {
   // Vercel cron calls this with Authorization: Bearer <CRON_SECRET>

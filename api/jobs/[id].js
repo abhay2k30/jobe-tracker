@@ -1,6 +1,6 @@
-import { connectDB } from '../../_lib/mongodb.js';
-import Job from '../../_lib/Job.js';
-import { requireAuth } from '../../_lib/auth.js';
+import { connectDB } from '../_lib/mongodb.js';
+import Job from '../_lib/Job.js';
+import { requireAuth } from '../_lib/auth.js';
 
 export default async function handler(req, res) {
   const decoded = requireAuth(req, res);
