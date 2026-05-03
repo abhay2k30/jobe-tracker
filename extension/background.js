@@ -1,6 +1,6 @@
 // ─── CONFIG ───────────────────────────────────────────────────────────────────
 // Replace with your deployed Vercel URL after deployment
-const API_BASE = 'https://your-app.vercel.app';
+const API_BASE = 'https://jobe-tracker.vercel.app';
 
 // ─── Listen for messages from content scripts / popup ─────────────────────────
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
