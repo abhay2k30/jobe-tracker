@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Tracker</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- Login View -->
+    <div id="login-view">
+      <div class="logo-row">
+        <div class="logo-mark">✦</div>
+        <h1 class="app-title">Job Tracker</h1>
+      </div>
+      <p class="subtitle">Sign in to track applications</p>
+      <div class="form-group">
+        <input type="email" id="email" placeholder="Email" autocomplete="email" />
+      </div>
+      <div class="form-group">
+        <input type="password" id="password" placeholder="Password" autocomplete="current-password" />
+      </div>
+      <p id="login-error" class="error hidden"></p>
+      <button id="login-btn" class="btn-primary">Sign in</button>
+      <p class="link-text">
+        No account? <a href="https://your-app.vercel.app" target="_blank">Register on web →</a>
+      </p>
+    </div>
+
+    <!-- Main View -->
+    <div id="main-view" class="hidden">
+      <div class="header">
+        <div class="logo-row-sm">
+          <div class="logo-mark-sm">✦</div>
+          <span class="app-title-sm">Job Tracker</span>
+        </div>
+        <div class="header-right">
+          <span id="user-name" class="user-label"></span>
+          <button id="logout-btn" class="btn-ghost">Logout</button>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <span id="stat-total" class="stat-num">—</span>
+          <span class="stat-label">Total</span>
+        </div>
+        <div class="stat-box">
+          <span id="stat-applied" class="stat-num">—</span>
+          <span class="stat-label">Applied</span>
+        </div>
+        <div class="stat-box">
+          <span id="stat-interview" class="stat-num">—</span>
+          <span class="stat-label">Interview</span>
+        </div>
+        <div class="stat-box stat-offer">
+          <span id="stat-offer" class="stat-num">—</span>
+          <span class="stat-label">Offer</span>
+        </div>
+      </div>
+
+      <div id="jobs-list"></div>
+
+      <div class="footer">
+        <a href="https://your-app.vercel.app/dashboard" target="_blank" class="btn-secondary">
+          Open full dashboard →
+        </a>
+      </div>
+    </div>
+
+    <!-- Loading -->
+    <div id="loading-view">
+      <div class="spinner-wrap"><div class="spinner"></div></div>
+    </div>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

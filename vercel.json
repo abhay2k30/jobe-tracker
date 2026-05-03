@@ -1,0 +1,16 @@
+{
+  "buildCommand": "cd client && npm install && npm run build",
+  "outputDirectory": "client/dist",
+  "rewrites": [
+    { "source": "/api/auth/:path*", "destination": "/api/auth/:path*" },
+    { "source": "/api/jobs/:path*", "destination": "/api/jobs/:path*" },
+    { "source": "/api/cron/:path*", "destination": "/api/cron/:path*" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/stale-check",
+      "schedule": "0 9 * * *"
+    }
+  ]
+}
