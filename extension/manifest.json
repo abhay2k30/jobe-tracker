@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Job Tracker",
+  "version": "1.0.0",
+  "description": "Auto-logs job applications from LinkedIn, Naukri, Internshala, Wellfound, Greenhouse, and Lever.",
+  "permissions": ["storage", "notifications", "activeTab", "scripting"],
+  "host_permissions": [
+    "https://www.linkedin.com/*",
+    "https://www.naukri.com/*",
+    "https://internshala.com/*",
+    "https://wellfound.com/*",
+    "https://boards.greenhouse.io/*",
+    "https://jobs.lever.co/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.linkedin.com/jobs/*",
+        "https://www.naukri.com/*",
+        "https://internshala.com/*",
+        "https://wellfound.com/*",
+        "https://boards.greenhouse.io/*",
+        "https://jobs.lever.co/*"
+      ],
+      "js": ["content-scripts/detector.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
